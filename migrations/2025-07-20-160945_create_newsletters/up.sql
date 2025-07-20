@@ -1,4 +1,4 @@
--- Create newsletters table
+-- Create newsletters table with explicit NOT NULL constraints
 CREATE TABLE newsletters (
     id SERIAL PRIMARY KEY,
     title VARCHAR NOT NULL,
@@ -6,13 +6,13 @@ CREATE TABLE newsletters (
     sender_name VARCHAR,
     subject VARCHAR NOT NULL,
     content TEXT NOT NULL,
-    newsletter_type VARCHAR DEFAULT 'unknown',
-    is_read BOOLEAN DEFAULT FALSE,
-    is_favorite BOOLEAN DEFAULT FALSE,
-    importance_score REAL DEFAULT 0.0,
-    received_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    newsletter_type VARCHAR NOT NULL DEFAULT 'unknown',
+    is_read BOOLEAN NOT NULL DEFAULT FALSE,
+    is_favorite BOOLEAN NOT NULL DEFAULT FALSE,
+    importance_score REAL NOT NULL DEFAULT 0.0,
+    received_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Create index for faster queries
