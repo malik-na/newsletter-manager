@@ -1,0 +1,6 @@
+[default]
+port = 8000
+
+[default.databases]
+newsletter_db = { url = "postgresql://naeemmalik@localhost:5432/newsletter_manager_db" }
+

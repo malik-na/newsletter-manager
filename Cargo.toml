@@ -1,0 +1,19 @@
+[package]
+name = "newsletter_manager"
+version = "0.1.0"
+edition = "2024"
+
+
+[dependencies]
+rocket = { version = "0.5", features = ["json"] }
+diesel = { version = "2.1", features = ["postgres", "chrono"] }
+diesel_migrations = "2.1"
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+
+[dependencies.rocket_sync_db_pools]
+version = "0.1"
+default-features = false
+features = ["diesel_postgres_pool"]
+
